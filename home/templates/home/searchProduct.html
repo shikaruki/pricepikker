@@ -1,0 +1,61 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css_file %}
+    <link rel="stylesheet" type="text/css" href={% static "css/search.css" %}>
+    <script src="https://kit.fontawesome.com/daf086dc64.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block title %}Product search{% endblock title %}
+{% block body %}
+    <div class="text-center mt-5">
+      <h1 class="heading text-light">Check product's cost </h1>
+    </div>
+    <div class="container">
+        <form method="POST" action="/searchProduct">
+            {% csrf_token %}
+            <div class="row justify-content-md-center mt-5">
+                <div class="col-lg-7 col-sm-12 search-box">
+                    <input type="text" class="search" name="search" placeholder="what are you looking for?"/>
+                    <button type="button " class="search-btn" >
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+                   
+                   
+
+                    
+                   
+                </div>
+            </div>
+    
+    
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            {% for list in lists %}
+            <div class="col-lg-3  m-2 p-2 card_style">
+                <div class="row g-0">      
+                    <div class="col-md-4">
+                      <img src="{{list.img}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">from <b><i> flipkart</i></b></h5>
+                        <p class="card-text">{{list.desc}}</p>
+                        <h4>{{list.price}}</h4>
+                     <!--   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+
+                        <a href="{{list.link}}" class="btn btn-primary" target="blank">Buy now</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+
+{% endblock %}
+

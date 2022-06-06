@@ -1,0 +1,1 @@
+web gunicorn priceComprison.wsgi:application --log-file -

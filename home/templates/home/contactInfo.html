@@ -1,0 +1,50 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" type="text/css" href={% static "css/contactInfo.css" %}> {% endblock %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+    <div class="container justify-content-md-center mb-5">
+        <div class="title mt-4">
+            <h1><u><i>Feel free to contact us</i></u></h1>
+        </div>
+       <div class="row justify-content-lg-center">
+            <div class="col-md-8 contact">
+            <h3>Send a message</h3>
+              <hr/>
+            <div class="row g-2 mb-3">
+              <div class="col-md mr-3">
+                <label  class="form-label">First Name</label>
+                <input type="text" class="form-control" placeholder="Ravi" aria-label="First name">
+              </div>
+              <div class="col-md mr-3">
+                <label  class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="Kumar" aria-label="First name">
+              </div>
+             </div>
+ 
+             <div class="row g-2 mb-3">
+              <div class="col-md mr-3">
+                <label  class="form-label">Email</label>
+                <input type="text" class="form-control" placeholder="example@gmail.com" aria-label="First name">
+              </div>
+              <div class="col-md mr-3">
+                <label class="form-label">Mobile No.</label>
+                <input type="text" class="form-control" placeholder="Ex. +91 1234567890" aria-label="First name">
+              </div>
+              </div>
+              <div class="row g-1 mb-3">
+                <label  class="form-label">Message</label>
+                     <textarea class="form-control" placeholder="Leave your message here..." id="floatingTextarea2" style="height: 100px"></textarea>
+                     
+              </div>
+              
+              <button type="button" class="btn btn-outline-primary">Send</button>    
+            </div>
+              
+
+
+           </div>
+           
+       </div>
+
+{% endblock %}
